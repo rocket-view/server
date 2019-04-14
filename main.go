@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+
+	"./config"
 )
 
 func main() {
-	fmt.Println("Hello, world!")
+	config.Load()
+	fmt.Println(config.Servers)
 }
