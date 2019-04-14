@@ -24,7 +24,7 @@ func openConnection(srv config.Server, cxn config.Connection, configChanged chan
 		for i := range cs {
 			cs[i] = alphabet[rand.Int63()%int64(len(alphabet))]
 		}
-		opts.SetClientID(string(cs))
+		opts.SetClientID("rocketui" + string(cs))
 	} else {
 		opts.SetClientID(cxn.ClientID)
 	}
@@ -47,7 +47,6 @@ func openConnection(srv config.Server, cxn config.Connection, configChanged chan
 			case cfg := <-_configChanged:
 				fmt.Printf("[%s -> %s] Sending out new config.\n", srv.Name, cxn.Name)
 				c.Publish("rocket_view/display_config", 0, true, cfg)
-			default:
 			}
 		}
 	}()

@@ -23,7 +23,6 @@ func StartServer(cfg config.Server) {
 				for _, callback := range callbacks {
 					callback <- config
 				}
-			default:
 			}
 		}
 	}()
