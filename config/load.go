@@ -39,6 +39,7 @@ func Load() {
 								Port:     0,
 								Username: "",
 								Password: "",
+								ClientID: "",
 								Ssl:      true,
 							}
 							for _, cxnConfig := range cxnConfigs.([]map[string]interface{}) {
@@ -53,6 +54,9 @@ func Load() {
 								}
 								if pass, ok := cxnConfig["password"]; ok {
 									cxn.Password = pass.(string)
+								}
+								if client, ok := cxnConfig["clientID"]; ok {
+									cxn.ClientID = client.(string)
 								}
 								if ssl, ok := cxnConfig["ssl"]; ok {
 									cxn.Ssl = ssl.(bool)

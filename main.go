@@ -1,12 +1,14 @@
 package main
 
 import (
-	"fmt"
-
 	"./config"
+	"./server"
 )
 
 func main() {
 	config.Load()
-	fmt.Println(config.Servers)
+	for _, srv := range config.Servers {
+		server.StartServer(srv)
+	}
+	select {}
 }

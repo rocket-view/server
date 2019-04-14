@@ -7,5 +7,6 @@ type Connection struct {
 	Port     uint16
 	Username string
 	Password string
+	ClientID string
 	Ssl      bool
 }

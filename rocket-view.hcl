@@ -4,7 +4,8 @@ server "local" {
         port = 1883
         #username = ""
         #password = ""
-        ssl = true
+        #clientID = ""
+        ssl = false
     }
 
     dataFile = "./rocket-view.dat"
